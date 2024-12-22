@@ -11,7 +11,7 @@
         <img src="C:\Users\polin\OneDrive\Рабочий стол\Сайт браузерный редактор\Logotip.png" alt="Логотип" class="logo">
         <nav class="menu">
             <ul>
-                <li><a href="index5.html">Главная</a></li>
+                <li><a href="index.html">Главная</a></li>
                 <li><a href="index4.html">О нас</a></li>
             </ul>
         </nav>

@@ -1,0 +1,107 @@
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = 2000;
+canvas.height = 1200;
+
+// Переменные для рисования
+let painting = false;
+let brushType = 'brush'; // Тип кисти: 'brush' (кисть) или 'pencil' (карандаш)
+let brushColor = document.getElementById('color').value;
+let brushSize = document.getElementById('brushSize').value;
+
+// Функции для рисования
+function startPosition(e) {
+  painting = true;
+  if (brushType === 'brush') {
+      drawBrush(e);
+  } else if (brushType === 'pencil') {
+      drawPencil(e);
+  }
+}
+
+function endPosition() {
+  painting = false;
+  ctx.beginPath();
+}
+
+function drawBrush(e) {
+  if (!painting) return;
+  ctx.lineWidth = brushSize;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = brushColor;
+  ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+}
+
+function drawPencil(e) {
+  if (!painting) return;
+  ctx.lineWidth = 1; // Карандаш всегда рисует с шириной линии 1
+  ctx.strokeStyle = brushColor;
+
+  ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+  ctx.stroke();
+}
+
+// События мыши
+canvas.addEventListener('mousedown', startPosition);
+canvas.addEventListener('mouseup', endPosition);
+canvas.addEventListener('mousemove', e => {
+  if (painting) {
+      if (brushType === 'brush') {
+          drawBrush(e);
+      } else if (brushType === 'pencil') {
+          drawPencil(e);
+      }
+  }
+});
+// Обработка выбора фото
+document.getElementById('upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            }
+            img.src = event.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+// Очистка канваса
+document.getElementById('clear').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+// Изменение цвета кисти
+document.getElementById('color').addEventListener('input', function(e) {
+    brushColor = e.target.value;
+});
+
+// Изменение размера кисти
+document.getElementById('brushSize').addEventListener('input', function(e) {
+    brushSize = e.target.value;
+});
+const saveBtn = document.getElementById('saveBtn');
+// Переключение между кистью и карандашом
+document.getElementById('brush').addEventListener('change', function(e) {
+    brushType = e.target.value;
+});
+document.getElementById('fill').addEventListener('click', () => {
+    ctx.fillStyle = fillColor;
+    ctx.fillRect(100, 100, 200, 150); // Заливка прямоугольника
+});
+
+// Функция для сохранения изображения как PNG
+saveBtn.addEventListener('click', function() {
+  const dataURL = canvas.toDataURL('image/png');
+  const link = document.createElement('a');
+  link.download = 'my_drawing.png'; // Имя файла для скачивания
+  link.href = dataURL;
+  link.click();
+});
+

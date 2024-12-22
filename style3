@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:#E1CBEC;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.toolbar {
+    margin-bottom: 10px;
+    background-color:#E1CBEC;
+    font-size: 20px;
+    font-family:'Kanit','Medium Italic';
+
+}
+
+canvas {
+    border: 1px solid #ccc;
+    cursor: crosshair;
+    height: 1200px;
+    width: 2000px;
+}
+
+.edit-button1 {
+    width: 200px;
+    height: 50px;
+    margin-left: 300px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #A578BB;
+    color: white;
+    font-size: 30px;
+    font-family:'Kanit','Medium Italic';
+    cursor: pointer;
+   
+}
+
+.edit-button1:hover {
+    background-color:rgb(90, 8, 128);
+}
+.edit-button2 {
+    width: 200px;
+    height: 50px;
+    margin-top: 1300px;
+    margin-right: 100px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #A578BB;
+    color: white;
+    font-size: 30px;
+    font-family:'Kanit','Medium Italic';
+    margin-left: 100px;
+    text-align: center;
+}
+
+.edit-button2:hover {
+    background-color:rgb(90, 8, 128);
+}
+.clear {
+    padding-left: 10px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #b595c6;
+    color: white;
+    font-size: 10px;
+    font-family:'Kanit','Medium Italic';
+    cursor: pointer;
+   
+}
+.file {
+    margin-right: 100px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #A578BB;
+    color: white;
+    font-size: 20px;
+   
+}
+.brush {
+    padding-left: 10px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #b595c6;
+    color: white;
+    font-size: 10px;
+    font-family:'Kanit','Medium Italic';
+    cursor: pointer;
+}
+.pencil {
+padding-left: 10px;
+padding: 20px 20px;
+border: none;
+border-radius: 20px;
+background-color: #b595c6;
+color: white;
+font-size: 10px;
+font-family:'Kanit','Medium Italic';
+cursor: pointer;
+}
+.back {
+    padding-left: 10px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #b595c6;
+    color: white;
+    font-size: 10px;
+    font-family:'Kanit','Medium Italic';
+    cursor: pointer;
+    margin-bottom: 20px;
+    }
+.colorPicker {
+  width: 69px;
+  height: 69px;
+  margin-top: 40px;
+  background-color: #b595c6;
+    }
+    

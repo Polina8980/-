@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>DesignPro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <input type="file" id="upload" accept="image/*"class="file">
+            <button id="clear" class="clear"><img src="C:\Users\polin\OneDrive\Рабочий стол\Сайт браузерный редактор\free-icon-eraser-175076.png" height="30" width="30"/></button>
+            <label for="color"></label>
+            <button id="brush" class="brush"><img src="C:\Users\polin\OneDrive\Рабочий стол\Сайт браузерный редактор\free-icon-paint-brush-8824206.png" height="30" width="30"/></button>
+            <button id="pencil" class="pencil"><img src="c:\Users\polin\OneDrive\Рабочий стол\Сайт браузерный редактор\free-icon-pencil-4277132.png" height="30" width="30"/></button>
+            <button id="floodFill" class="back"><img src="C:\Users\polin\OneDrive\Рабочий стол\Сайт браузерный редактор\free-icon-fill-color-2708370.png" height="30" width="30"/></button>
+            <input type="color" id="color" class="colorPicker" value="#000000">
+            <label for="brushSize"></label>
+            <input type="range" id="brushSize" min="1" max="50" value="5">
+            <button id="saveBtn"class="edit-button1">Сохранить</button>
+        </div>
+        <canvas id="canvas" width="1000"></canvas>
+    </div>
+    <a href="index5.html" class="edit-button2">Выйти</a>
+    <script src="script.js"></script>    
+</div>
+</body>
+</html>
